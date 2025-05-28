@@ -4,18 +4,44 @@
     include "Includes/templates/header.php";
     include "Includes/templates/navbar.php";
 ?>
+<link rel="stylesheet" href="Design/css/car-rental-styles.css">
 
 <!-- Home Section -->
-<section class = "home_section">
+<section class="home_section">
+    <!-- Video Background -->
+    <div class="hero-video">
+        <video id="heroVideo" autoplay muted loop playsinline>
+            <source src="Design/Videos/Middleslide.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <!-- Content -->
     <div class="section-header">
-        <div class="section-title" style = "font-size:50px; color:white">
+        <div class="section-title" style="font-size:50px; color:white">
             Find Best Car & Limousine
         </div>
         <hr class="separator">
-		<div class="section-tagline">
+        <div class="section-tagline">
             From as low as $10 per day with limited time offer discounts
-		</div>					
-	</div>
+        </div>
+    </div>
+    
+    <!-- Video Controls -->
+    <div class="video-controls">
+        <button class="video-btn" id="playPauseBtn" title="Play/Pause">
+            <i class="fas fa-pause"></i>
+        </button>
+        <button class="video-btn" id="muteBtn" title="Mute/Unmute">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+    </div>
+    
+    <!-- Sound Indicator -->
+    <div class="sound-indicator" id="soundIndicator">
+        Video Muted
+    </div>
 </section>
 
 <!-- Our Services Section -->
