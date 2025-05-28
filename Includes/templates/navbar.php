@@ -33,7 +33,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class = "container">
             <a class="navbar-brand" href="#">
-                Yah<span style = "color:#04DBC0">Ya</span>&nbsp;CarRental
+                JA<span style = "color:#04DBC0">WA</span>&nbsp;CaRent
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yahyaNavbar" aria-controls="yahyaNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

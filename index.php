@@ -7,8 +7,9 @@
 <link rel="stylesheet" href="Design/css/car-rental-styles.css">
 
 <!-- Home Section -->
+<!-- Home Section - Full Screen Video with Side Text Overlay -->
 <section class="home_section">
-    <!-- Video Background -->
+    <!-- Full Screen Video Background -->
     <div class="hero-video">
         <video id="heroVideo" autoplay muted loop playsinline>
             <source src="Design/Videos/Middleslide.mp4" type="video/mp4">
@@ -17,30 +18,19 @@
         <div class="video-overlay"></div>
     </div>
     
-    <!-- Content -->
-    <div class="section-header">
-        <div class="section-title" style="font-size:50px; color:white">
-            Find Best Car & Limousine
+    <!-- Text Content Overlay -->
+    <div class="hero-content-wrapper">
+        <div class="hero-text-content">
+            <div class="section-title" style="font-size:50px; color:white">
+                Find The Best Car For You Now
+            </div>
+            <hr class="separator">
+            <div class="section-tagline">
+                From a low price of $10 per day with a limited time offer discounts. 
+                Experience a premium car rental service with our extensive fleet of luxury vehicles 
+                and professional customer service.
+            </div>
         </div>
-        <hr class="separator">
-        <div class="section-tagline">
-            From as low as $10 per day with limited time offer discounts
-        </div>
-    </div>
-    
-    <!-- Video Controls -->
-    <div class="video-controls">
-        <button class="video-btn" id="playPauseBtn" title="Play/Pause">
-            <i class="fas fa-pause"></i>
-        </button>
-        <button class="video-btn" id="muteBtn" title="Mute/Unmute">
-            <i class="fas fa-volume-mute"></i>
-        </button>
-    </div>
-    
-    <!-- Sound Indicator -->
-    <div class="sound-indicator" id="soundIndicator">
-        Video Muted
     </div>
 </section>
 
@@ -217,7 +207,7 @@
 				<form method="POST" action = "reserve.php" class = "car-reservation-form" id = "reservation_form" v-on:submit = "checkForm">
 					<div class="text_header">
 						<span>
-							Find your car
+							Find your perfect car
 						</span>
 					</div>
 					<div>
