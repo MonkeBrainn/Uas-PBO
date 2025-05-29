@@ -6,15 +6,15 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-		<meta name="description" content="JAWA JAWA CaRent">
+		<meta name="description" content="Local CaRent">
 		<meta name="author" content="JAIRI IDRISS">
-		<title>JAWA JAWA CaRent</title>
+		<title>Local CaRent</title>
 
 		<!-- EXTERNAL STYLE LINKS -->
 
 		<link rel="stylesheet" type="text/css" href="Design/css/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="Design/fonts/css/all.min.css">
-		<link rel="stylesheet" type="text/css" href="Design/css/main-style.css">
+		<link rel="stylesheet" type="text/css" href="Design/css/header.css">
 		<link rel="stylesheet" type="text/css" href="Design/css/responsive.css">
 
 		<!-- GOOGLE FONTS -->
