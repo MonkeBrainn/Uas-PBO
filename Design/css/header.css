@@ -1,0 +1,136 @@
+/*** START HEADER STYLE ***/
+
+.nav-header
+{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* above navbar */
+
+.above_navbar 
+{
+    background: #000000;
+    color:white;
+    height:45px;
+}
+
+.above_navbar .bar_content
+{
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.above_navbar .company_details 
+{
+    float: left;
+}
+
+.above_navbar .company_details ul
+{
+    list-style :none;
+    margin:0px;
+    padding:0px;
+}
+
+.above_navbar .company_details ul li
+{
+    display: inline-block;
+    line-height:45px;
+    margin-right: 10px;
+}
+
+.above_navbar .company_details ul li i
+{
+    color:#04dbc0;
+}
+
+.above_navbar .company_social
+{
+    float : right;
+}
+
+.above_navbar .company_social ul
+{
+    list-style :none;
+    margin:0px;
+    padding:0px;
+}
+
+.above_navbar .company_social ul li
+{
+    display: inline-block;
+    line-height:45px;
+}
+
+.above_navbar .company_social ul li a
+{
+    display: inline-block;
+    color: #fff;
+    padding: 0;
+    margin-left: 15px;
+    line-height: 45px;
+}
+
+/* navbar */
+@keyframes sticky-navbar 
+{
+    from {top: 45;}
+    to {top: 0;}
+}
+
+.sticky-navbar
+{
+    animation-name: sticky-navbar;
+    animation-duration: 1s;
+    background-color: #000000 !important;
+
+}
+
+.navbar
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-light .navbar-toggler
+{
+    background-color: #f9f9ff;
+}
+
+.navbar-brand 
+{
+    font-family: "PT Sans Narrow";
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-light .navbar-brand
+{
+    color:white;
+}
+
+.navbar-brand:hover
+{
+    color:white;
+}
+
+.navbar-light .navbar-nav .active>.nav-link
+{
+    color:white;
+}
+
+.navbar-light .navbar-nav .nav-link
+{
+    color:white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover
+{
+    color: #04DBC0;
+}
+
+/*** END HEADER STYLE ***/
