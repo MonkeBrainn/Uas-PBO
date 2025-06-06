@@ -1,0 +1,13 @@
+/*** START HOME SECTION STYLE ***/
+
+.home_section
+{
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../images/home_bg.jpg");
+    height:500px;
+    padding:150px 0px;
+}
+
+/*** END HOME SECTION STYLE ***/

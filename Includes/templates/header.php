@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 		<meta name="description" content="Local CaRent">
-		<meta name="author" content="JAIRI IDRISS">
+		<meta name="author" content="Rowan">
 		<title>Local CaRent</title>
 
 		<!-- EXTERNAL STYLE LINKS -->
@@ -16,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="Design/fonts/css/all.min.css">
 		<link rel="stylesheet" type="text/css" href="Design/css/header.css">
 		<link rel="stylesheet" type="text/css" href="Design/css/responsive.css">
+		<link rel="stylesheet" href="Design/css/reserve.css">
 
 		<!-- GOOGLE FONTS -->
 

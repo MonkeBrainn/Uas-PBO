@@ -1,0 +1,47 @@
+/*** START OUR SERVICES SECTION STYLE ***/
+
+.our-services
+{
+    background-color: #fff;
+    padding:50px 0px;
+}
+
+.single-feature 
+{
+    border-radius: 10px;
+    background-color: #f9f9ff;
+    padding: 30px;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.single-feature:hover h4 
+{
+    color: #fab700;
+}
+
+.single-feature h4 
+{
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.single-feature:hover 
+{
+    box-shadow: -14.142px 14.142px 20px 0px rgb(157 157 157 / 50%);
+    cursor: pointer;
+}
+
+.single-feature h4 span  
+{
+    margin-right: 15px;
+}
+
+/*** END OUR SERVICES SECTION STYLE ***/

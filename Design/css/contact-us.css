@@ -1,0 +1,78 @@
+/*** START CONTACT US SECTION STYLE ***/
+
+.contact-section
+{
+	padding:100px 0px;
+}
+
+.contact-info h2
+{
+	font-size: 36px;
+	color: #303133;
+	margin: 0 0 8px;
+	font-weight: 400;
+	line-height: 48px;
+	letter-spacing: -0.04em;
+}
+
+.contact-info h3 
+{
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-info h4 
+{
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.contact-form 
+{
+    background-color: #fff;
+    padding: 50px 40px;
+    -webkit-box-shadow: 0px 50px 100px 0px rgba(64, 1, 4, 0.1), 0px -6px 0px 0px rgba(248, 99, 107, 0.004);
+    box-shadow: 0px 50px 100px 0px rgba(64, 1, 4, 0.1), 0px -6px 0px 0px rgba(248, 99, 107, 0.004);
+    border-radius: 3px;
+}
+
+.form-control
+{
+    background-color: #fff;
+    border-radius: 0;
+    padding: 25px 10px;
+    box-shadow: none;
+    border: 2px solid #eee;
+}
+
+.form-control:focus 
+{
+    border-color: #04DBC0;
+    box-shadow: none;
+    outline: none;
+}
+
+.contact_send_btn
+{
+    background-color: #04DBC0;
+    color: #fff;
+    font-family: "Work Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 50px;
+    display: inline-block;
+    padding: 0 10px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.contact_send_btn:hover
+{
+    background-color: #fab700;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/*** END CONTACT US SECTION STYLE ***/

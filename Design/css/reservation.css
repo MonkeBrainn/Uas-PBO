@@ -1,0 +1,50 @@
+/**** START RESERVATION SECTION STYLE ***/
+
+.reservation_section
+{
+    background-image: url('../images/reservation-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 1000px #2d2d2d7d;
+}
+
+.reservation_section .car-reservation-form
+{
+    box-shadow: 0 5px 40px rgb(0 0 0 / 10%);
+    padding: 10px 40px 40px;
+    background-color: white;
+}
+
+.car-reservation-form .text_header
+{
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 20px 0px;
+    text-transform: uppercase;
+}
+
+.car-reservation-form label
+{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.sbmt-bttn
+{
+    background: #04DBC0;
+    color: white;
+    padding: 10px 25px;
+    width: 100%;
+}
+
+
+.sbmt-bttn:hover
+{
+    background: #5856D6;
+    border-color: #5856D6;
+    color: white;
+}
+
+/**** END RESERVATION SECTION STYLE ***/

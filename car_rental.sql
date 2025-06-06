@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2024 at 02:09 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Jun 05, 2025 at 02:10 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,10 +42,10 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `car_name`, `brand_id`, `type_id`, `color`, `model`, `description`) VALUES
-(1, 'Porsche Boxster', 6, 4, 'Red', '2017', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis in odio quis cursus. Pel'),
-(2, 'Audi A5', 1, 4, 'Red', '2017', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis in odio quis cursus. Pel'),
-(3, 'Mercedes-Benz CLS', 4, 4, 'Blue', '2019', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis in odio quis cursus. Pel'),
-(4, 'Audi A7', 1, 6, 'Blue', '2019', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent venenatis in odio quis cursus. Pel');
+(11, 'Jeep Wrangler', 15, 7, 'Red', '2024', 'The latest Jeep Wrangler 4 door Rubicon'),
+(12, 'Volkswagen Golf-GTI', 13, 9, 'Red', '2020', 'Our old and reliable model'),
+(13, 'Toyota GR86', 12, 4, 'White', '2023', 'A fast small and light car to use for those who likes the series'),
+(23, 'Kia Telluride', 14, 8, 'grey', '2025', 'Our newest available car');
 
 -- --------------------------------------------------------
 
@@ -64,12 +64,10 @@ CREATE TABLE `car_brands` (
 --
 
 INSERT INTO `car_brands` (`brand_id`, `brand_name`, `brand_image`) VALUES
-(1, 'Audi', 'Audi-A4-Avant-1.jpg'),
-(2, 'BMW', 'bmw-3-series-sedan.jpg'),
-(3, 'Lexus', '2016-Lexus-RX-350-BM-01.jpg'),
-(4, 'Mercedes Benz', 'Mercedes-C-Class-Estate-1.jpg'),
-(5, 'MINI', '2016-MINI-Cooper-S-Clubman-ALL4.jpg'),
-(6, 'Porsche', 'P14_0596_a4_rgb-1.jpg');
+(12, 'Toyota', '19092_pexels-jdgromov-4781948.jpg'),
+(13, 'Volkswagen', '25796_pexels-alfonso-escalante-1319242-2533092.jpg'),
+(14, 'Kia', '57601_pexels-hyundaimotorgroup-31212857.jpg'),
+(15, 'Jeep', '60190_95818_pexels-jdgromov-13118535.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,7 +88,9 @@ CREATE TABLE `car_types` (
 INSERT INTO `car_types` (`type_id`, `type_label`, `type_description`) VALUES
 (1, 'Sedan', 'A sedan has four doors and a traditional trunk.'),
 (4, 'Coupe', 'A coupe has historically been considered a two-door car with a trunk and a solid roof.'),
-(6, 'HATCHBACK', 'Traditionally, the term \"hatchback\" has meant a compact or subcompact sedan with a squared-off roof and a rear flip-up hatch door that provides access to the vehicle\'s cargo area instead of a conventional trunk.');
+(7, 'Off Road', 'Off-road cars are specially designed or modified vehicles built to handle rough terrains and uneven surfaces that standard cars cannot easily traverse.'),
+(8, 'SUV', 'An SUV (Sport Utility Vehicle) is a type of car that combines elements of road-going passenger cars with features from off-road vehicles, like higher ground clearance and all-wheel or four-wheel drive.'),
+(9, 'HatchBack', 'A hatchback is a type of car with a rear door (called a hatch) that swings upward to provide access to the cargo area, which is integrated with the passenger compartment (not separated like in a sedan).');
 
 -- --------------------------------------------------------
 
@@ -110,7 +110,33 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`client_id`, `full_name`, `client_email`, `client_phone`) VALUES
-(5, 'John Doe', 'john_doe@gmail.com', '0123456789');
+(5, 'John Doe', 'john_doe@gmail.com', '0123456789'),
+(6, 'Johnny', 'abc@email.com', '0123456789'),
+(7, 'Johnny joestar', 'abc@emai1.com', '0123456789');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_users`
+--
+
+CREATE TABLE `customer_users` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `address` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer_users`
+--
+
+INSERT INTO `customer_users` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `address`, `created_at`) VALUES
+(1, 'Rowan', 'Khang', 'rowank123@gmail.com', '083155836770', '$2y$10$CL.paVM5MUxvoV.wwPEVy.g7jJxfrlcEMDXsnSQ82OEZlRSmAGul6', 'Sulut', '2025-06-05 09:35:47');
 
 -- --------------------------------------------------------
 
@@ -135,11 +161,9 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`reservation_id`, `client_id`, `car_id`, `pickup_date`, `return_date`, `pickup_location`, `return_location`, `canceled`, `cancellation_reason`) VALUES
-(1, 1, 1, '2021-05-11', '2021-05-17', 'Agadir', 'Agadir', 0, NULL),
-(2, 2, 3, '2021-04-30', '2021-05-06', 'Agadir', 'Agadir', 0, NULL),
-(3, 3, 4, '2021-04-30', '2021-05-06', 'Agadir', 'Agadir', 1, 'Changed my mind! Sorry'),
-(4, 4, 4, '2021-04-29', '2021-05-02', 'Casablanca', 'Agadir', 0, NULL),
-(5, 5, 4, '2024-03-02', '2024-03-05', 'Paris', 'Paris', 0, NULL);
+(5, 5, 4, '2024-03-02', '2024-03-05', 'Paris', 'Paris', 0, NULL),
+(6, 6, 23, '2025-06-05', '2025-06-22', 'paris', 'paris', 0, NULL),
+(7, 7, 13, '2025-06-06', '2025-06-30', 'england', 'paris', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -192,6 +216,13 @@ ALTER TABLE `clients`
   ADD PRIMARY KEY (`client_id`);
 
 --
+-- Indexes for table `customer_users`
+--
+ALTER TABLE `customer_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Indexes for table `reservations`
 --
 ALTER TABLE `reservations`
@@ -211,31 +242,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `car_brands`
 --
 ALTER TABLE `car_brands`
-  MODIFY `brand_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `brand_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `car_types`
 --
 ALTER TABLE `car_types`
-  MODIFY `type_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `type_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `client_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `customer_users`
+--
+ALTER TABLE `customer_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `reservation_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

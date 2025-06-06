@@ -1,0 +1,35 @@
+/*** START TITLE & TAGLINE & SEPARATOR STYLE ***/
+
+.section-header 
+{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header > .section-tagline 
+{
+    color: #04DBC0;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "PT Sans Narrow";
+    margin-bottom: 10px;
+}
+
+.section-header > .section-title 
+{
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-family: "PT Sans Narrow";
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.section-header > .separator 
+{
+    width: 150px;
+    background: #04DBC0;
+}
+
+/*** END TITLE & TAGLINE & SEPARATOR STYLE ***/

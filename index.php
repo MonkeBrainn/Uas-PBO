@@ -4,7 +4,7 @@
     include "Includes/templates/header.php";
     include "Includes/templates/navbar.php";
 ?>
-<link rel="stylesheet" href="Design/css/car-rental-styles.css">
+<link rel="stylesheet" href="Design/css/index.css">
 
 <!-- Home Section -->
 <!-- Home Section - Full Screen Video with Side Text Overlay -->
@@ -43,7 +43,6 @@
             </div>
             <hr class="separator">
             <div class="section-tagline">
-                Who are in extremely love with eco friendly system.
             </div>
         </div>
         <div class="row">
@@ -56,8 +55,7 @@
                         Expert Technicians
                     </h4>
                     <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-                    </p>
+                        Technicians with years of experience in the industry, ensuring that your vehicle is in the best quality.  
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -69,7 +67,7 @@
                         Professional Service
                     </h4>
                     <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                        Our team is dedicated to providing professional service with a focus on quality and customer satisfaction.
                     </p>
                 </div>
             </div>
@@ -82,7 +80,7 @@
                         Great Support
                     </h4>
                     <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                        Our support team is available 24/7 to assist you with any queries or issues you may have. 
                     </p>
                 </div>
             </div>
@@ -92,10 +90,10 @@
                         <span>
                             <i class="fas fa-rocket"></i>
                         </span>
-                        Technical Skills
+                        Fast Service
                     </h4>
                     <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                        We understand the importance of time, which is why we strive to provide quick and efficient service without compromising on quality.
                     </p>
                 </div>
             </div>
@@ -108,7 +106,7 @@
                         Highly Recomended
                     </h4>
                     <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                        Our services are highly recommended by our satisfied customers, who appreciate our commitment to excellence and customer satisfaction.
                     </p>
                 </div>
             </div>
@@ -121,7 +119,7 @@
                         Positive Reviews
                     </h4>
                     <p>
-                        Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+                        We take pride in the positive feedback we receive from our clients, which reflects back to our dedication on providing best top-notch service.
                     </p>
                 </div>
             </div>
@@ -137,18 +135,12 @@
                 <img src="Design/images/about-img.jpg" alt="Car Rental Image">
             </div>
             <div class = "col-md-6 right-area" style = "padding:50px">
-                <h1>
-                    Globally Connected <br>
-                    by Large Network
+                                <h1>
+                    Need a ride that fits your vibe? <br>
                 </h1>
                 <p>
-                    <span>
-                        We are here to listen from you deliver exellence
-                    </span>
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                    Whether you're heading out on a road trip, running errands, or just need a sweet set of wheels for the weekend — we've got you covered.
+                    Fast booking, great prices, no stress. Just grab the keys and go.
                 </p>
                 <a class="my-btn bttn" href="#">get details</a>
             </div>
@@ -161,11 +153,11 @@
     <div class = "container">
         <div class="section-header">
             <div class="section-title">
-                First Class Car Rental & Limousine Services
+                First Class Car Rental 
             </div>
             <hr class="separator">
             <div class="section-tagline">
-                We offer professional car rental & limousine services in our range of high-end vehicles
+                We offer professional car rental in our range of high-end vehicles
             </div>
         </div>
         <div class = "car-brands">
@@ -263,22 +255,22 @@
                         Getting dressed up and traveling with good friends makes for a shared, unforgettable experience.
                     </p>
                     <h3>
-                        198 West 21th Street, Suite 721 
+                        QMF4+RV East Panunggangan, Tangerang City, Banten
                         <br>
-                        New York, NY 10010
+                        Jakarta, 10010
                     </h3>
                     <ul>
                         <li>
                             <span style = "font-weight: bold">Email:</span> 
-                            contact@yahyacarrental.com
+                            contact@Rcarrental.com
                         </li>
                         <li>
                             <span style = "font-weight: bold">Phone:</span> 
-                            +88 (0) 101 0000 000
+                            +62 801 0000 0000
                         </li>
                         <li>
                             <span style = "font-weight: bold">Fax:</span> 
-                            +88 (0) 202 0000 001
+                            +62 802 0000 0010
                         </li>
                     </ul>
                 </div>
@@ -317,63 +309,7 @@
 </section>
 
 <!-- Footer Section -->
-<section class="widget_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="footer_widget">
-                    <a class="navbar-brand" href="">
-                        Yah<span style = "color:#04DBC0">Ya</span>&nbsp;CarRental
-                    </a>
-                    <p>
-                        Getting dressed up and traveling with good friends makes for a shared, unforgettable experience.
-                    </p>
-                    <ul class="widget_social">
-                        <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f fa-2x"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                        <li><a href="#" data-toggle="tooltip" title="Google+"><i class="fab fa-google-plus-g fa-2x"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="footer_widget">
-                    <h3>Contact Info</h3>
-                    <ul class = "contact_info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>962 Fifth Avenue, 3rd Floor New York, NY10022
-                        </li>
-                        <li>
-                            <i class="far fa-envelope"></i>contact@barbershop.com
-                        </li>
-                        <li>
-                            <i class="fas fa-mobile-alt"></i>+123 456 789 101
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="footer_widget">
-                    <h3>Newsletter</h3>
-                    <p style = "margin-bottom:0px">Don't miss a thing! Sign up to receive daily deals</p>
-                    <div class="subscribe_form">
-                        <form action="#" class="subscribe_form" novalidate="true">
-                            <input type="email" name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address...">
-                            <button type="submit" class="submit">SUBSCRIBE</button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- BOTTOM FOOTER -->
 <?php include "Includes/templates/footer.php"; ?>
-
-
 
 <script>
 

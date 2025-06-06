@@ -80,7 +80,7 @@ body {
 .hero-text-content .separator {
     width: 80px;
     height: 4px;
-    background: #04DBC0;
+    background: #ffffff;
     border: none;
     margin: 20px 0;
     border-radius: 2px;
@@ -316,7 +316,7 @@ body {
     display: inline-block;
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #04DBC0, #007bff);
+    background: linear-gradient(135deg, #000000, #040404);
     border-radius: 50%;
     line-height: 70px;
     margin-bottom: 20px;
@@ -366,14 +366,14 @@ body {
 }
 
 .about-area p span {
-    color: #04DBC0;
+    color: #3a5a7c;
     font-weight: 600;
     font-size: 1.2rem;
 }
 
 .my-btn.bttn {
     display: inline-block;
-    background: linear-gradient(135deg, #04DBC0, #007bff);
+    background: linear-gradient(135deg, #474848, #000000);
     color: white;
     padding: 15px 35px;
     text-decoration: none;
@@ -386,7 +386,7 @@ body {
 }
 
 .my-btn.bttn:hover {
-    background: linear-gradient(135deg, #007bff, #04DBC0);
+    background: linear-gradient(135deg, #6f7071, #5c5e5d);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(4, 219, 192, 0.3);
     color: white;
@@ -434,7 +434,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(4, 219, 192, 0.8), rgba(0, 123, 255, 0.8));
+    background: linear-gradient(45deg, #e6e3e33f, #d7d3d368);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -463,28 +463,68 @@ body {
 
 /* Reservation Section */
 .reservation_section {
-    background: linear-gradient(135deg, rgba(4, 219, 192, 0.95), rgba(0, 123, 255, 0.95)), 
-                url('Design/images/reservation-bg.jpg') center/cover no-repeat;
+    background: #4d505110;
+    padding: 50px 0;
     position: relative;
 }
 
-.reservation_section::before {
+.reservation_section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.reservation_section .row {
+    display: flex;
+    align-items: stretch;
+    min-height: 600px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* Left Side - Background Image (col-md-5) */
+.reservation_section .col-md-5 {
+    background: url('../images/bgreserve.jpg') center/cover no-repeat;
+    position: relative;
+    min-height: 600px;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+    padding: 0 !important;
+}
+
+/* Add some content to the left side to ensure it displays */
+.reservation_section .col-md-5::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+/* Right Side - Form (col-md-7) */
+.reservation_section .col-md-7 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px !important;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
 }
 
 .car-reservation-form {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    width: 100%;
+    max-width: 400px;
 }
 
 .car-reservation-form .text_header {
@@ -507,7 +547,7 @@ body {
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background: #04DBC0;
+    background: #0202027e;
     border-radius: 2px;
 }
 
@@ -535,14 +575,14 @@ body {
 
 .form-control:focus {
     outline: none;
-    border-color: #04DBC0;
+    border-color: #191a19;
     box-shadow: 0 0 0 3px rgba(4, 219, 192, 0.1);
     background: white;
 }
 
 .btn.sbmt-bttn {
     width: 100%;
-    background: linear-gradient(135deg, #04DBC0, #007bff);
+    background: linear-gradient(135deg, #54b811c8, #54b811bb);
     color: white;
     padding: 18px;
     border: none;
@@ -557,7 +597,7 @@ body {
 }
 
 .btn.sbmt-bttn:hover {
-    background: linear-gradient(135deg, #007bff, #04DBC0);
+    background: linear-gradient(135deg, #54b811ad, #54b81194);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(4, 219, 192, 0.3);
 }
@@ -566,6 +606,134 @@ body {
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .reservation_section .row {
+        flex-direction: column;
+    }
+    
+    .reservation_section .col-md-5 {
+        min-height: 300px;
+        flex: none;
+        max-width: 100%;
+        order: 1;
+    }
+    
+    .reservation_section .col-md-7 {
+        flex: none;
+        max-width: 100%;
+        order: 2;
+        padding: 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .reservation_section {
+        padding: 30px 0;
+    }
+    
+    .reservation_section .container {
+        margin: 0 15px;
+    }
+    
+    .reservation_section .col-md-5 {
+        min-height: 250px;
+    }
+    
+    .reservation_section .col-md-7 {
+        padding: 25px !important;
+    }
+    
+    .car-reservation-form .text_header span {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .reservation_section .container {
+        margin: 0 10px;
+    }
+    
+    .reservation_section .col-md-7 {
+        padding: 20px !important;
+    }
+    
+    .car-reservation-form .text_header span {
+        font-size: 1.6rem;
+    }
+    
+    .form-control {
+        padding: 12px 15px;
+    }
+    
+    .btn.sbmt-bttn {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design for Reservation Section */
+@media (max-width: 992px) {
+    .reservation_section .row {
+        flex-direction: column;
+    }
+    
+    .reservation_section .col-md-5 {
+        min-height: 300px;
+        order: 1;
+    }
+    
+    .reservation_section .col-md-7 {
+        order: 2;
+        padding: 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .reservation_section {
+        padding: 30px 0;
+    }
+    
+    .reservation_section .container {
+        margin: 0 15px;
+    }
+    
+    .reservation_section .col-md-5 {
+        min-height: 250px;
+    }
+    
+    .reservation_section .col-md-7 {
+        padding: 25px !important;
+    }
+    
+    .car-reservation-form .text_header span {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .reservation_section .container {
+        margin: 0 10px;
+    }
+    
+    .reservation_section .col-md-7 {
+        padding: 20px !important;
+    }
+    
+    .car-reservation-form .text_header span {
+        font-size: 1.6rem;
+    }
+    
+    .form-control {
+        padding: 12px 15px;
+    }
+    
+    .btn.sbmt-bttn {
+        padding: 15px;
+        font-size: 1rem;
+    }
 }
 
 /* Contact Section */
@@ -640,7 +808,7 @@ body {
 }
 
 .contact_send_btn {
-    background: linear-gradient(135deg, #04DBC0, #007bff);
+    background: linear-gradient(135deg, #54b811c8, #54b811c8, #54b811bb);
     color: white;
     padding: 15px 40px;
     border: none;
@@ -654,7 +822,7 @@ body {
 }
 
 .contact_send_btn:hover {
-    background: linear-gradient(135deg, #007bff, #04DBC0);
+    background: linear-gradient(135deg, #54b811a4, #54b81190);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(4, 219, 192, 0.3);
 }

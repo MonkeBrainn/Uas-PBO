@@ -1,0 +1,71 @@
+/*** START ABOUT AREA SECTION STYLE ***/
+
+.about-area .left-area img
+{
+    width:100%;
+}
+
+.about-area .right-area h1 
+{
+    margin-bottom: 20px;
+}
+
+.my-btn 
+{
+    background-color: #fab700;
+    line-height: 42px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    border: 1px solid transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.about-area .right-area .bttn 
+{
+    background: #fab700;
+    color: #fff;
+    border: 1px solid #fff;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.about-area>.row 
+{
+    justify-content: center;
+    align-items: center;
+}
+
+.about-area .right-area .my-btn:hover 
+{
+    background: transparent;
+    color: #fab700;
+    border-color: #fab700;
+}
+
+.about-area .right-area p 
+{
+    color: #777777;
+}
+
+.about-area .right-area p span 
+{
+    font-weight: 500;
+    color: #222;
+    font-size:14px
+}
+
+
+/*** END ABOUT AREA SECTION STYLE ***/

@@ -14,15 +14,22 @@
 	}
 ?>
 
-<!-- BANNER SECTION -->
-<div class = "reserve-banner-section">
-	<h2>
-		Reserve your car
-	</h2>
+<!-- Link to external CSS file -->
+<link rel="stylesheet" href="Design/css/reserve-styles.css">
+
+<!-- HERO SECTION WITH BACKGROUND -->
+<div class="hero-section">
+	<div class="hero-overlay">
+		<div class="container">
+			<div class="hero-content">
+				<h1 class="hero-title">RESERVE YOUR CAR</h1>
+			</div>
+		</div>
+	</div>
 </div>
 
-<!-- CAR RESERVATION SECTION -->
-<section class="car_reservation_section">
+<!-- RESERVATION SECTION -->
+<section class="reservation-section">
 	<div class="container">
 		<?php
 			if(isset($_POST['submit_reservation']) && $_SERVER['REQUEST_METHOD'] === 'POST')
@@ -55,8 +62,10 @@
 					$stmt_appointment = $con->prepare("insert into reservations(client_id, car_id, pickup_date, return_date, pickup_location, return_location ) values(?, ?, ?, ?, ?, ?)");
                     $stmt_appointment->execute(array($client_id[0],$selected_car,$pickup_date,$return_date,$pickup_location,$return_location));
 					
-					echo "<div class = 'alert alert-success'>";
-                        echo "Great! Your reservation has been created successfully.";
+					echo "<div class='success-message'>";
+                        echo "<i class='fas fa-check-circle'></i>";
+                        echo "<h3>Reservation Successful!</h3>";
+                        echo "<p>Great! Your reservation has been created successfully.</p>";
                     echo "</div>";
 
 					$con->commit();
@@ -64,12 +73,12 @@
                 catch(Exception $e)
                 {
                     $con->rollBack();
-                    echo "<div class = 'alert alert-danger'>"; 
-                        echo $e->getMessage();
+                    echo "<div class='error-message'>"; 
+                        echo "<i class='fas fa-exclamation-triangle'></i>";
+                        echo "<h3>Reservation Failed</h3>";
+                        echo "<p>" . $e->getMessage() . "</p>";
                     echo "</div>";
                 }
-
-
 			}
 			elseif (isset($_SESSION['pickup_date']) && isset($_SESSION['return_date']))
 			{
@@ -90,160 +99,147 @@
                 $stmt->execute(array($pickup_date, $return_date));
                 $available_cars = $stmt->fetchAll();
 				?>
-					<form action = "reserve.php" method = "POST" id="reservation_second_form" v-on:submit = "checkForm">
-						<div class = "row" style = "margin-bottom: 20px;">
-							<div class = "col-md-3 reservation_cards">
-								<p>
-									<i class="fas fa-calendar-alt"></i>
-									<span>Pickup Date : </span><?php echo $_SESSION['pickup_date']; ?>
-								</p>
-							</div>
-							<div class = "col-md-3 reservation_cards">
-								<p>
-									<i class="fas fa-calendar-alt"></i>
-									<span>Return Date : </span><?php echo $_SESSION['return_date']; ?>
-								</p>
-							</div>
-							<div class = "col-md-3 reservation_cards">
-								<p>
-									<i class="fas fa-map-marked-alt"></i>
-									<span>Pickup Location : </span><?php echo $_SESSION['pickup_location']; ?>
-								</p>
-							</div>
-							<div class = "col-md-3 reservation_cards">
-								<p>
-									<i class="fas fa-map-marked-alt"></i>
-									<span>Return Location : </span><?php echo $_SESSION['return_location']; ?>
-								</p>
+				
+				<!-- RESERVATION DETAILS -->
+				<div class="reservation-details">
+					<div class="detail-cards">
+						<div class="detail-card">
+							<i class="fas fa-calendar-alt"></i>
+							<div class="detail-info">
+								<span class="detail-label">Pickup Date :</span>
+								<span class="detail-value"><?php echo date('Y-m-d', strtotime($_SESSION['pickup_date'])); ?></span>
 							</div>
 						</div>
-						<div class = "row">
-							<div class = "col-md-7">
-								<div class="btn-group-toggle" data-toggle="buttons">
-									<div class="invalid-feedback" style = "display:block;margin: 10px 0px;font-size: 15px;" v-if="selected_car === null">
-										Select your car
-									</div>
-									<div class="items_tab">
-										<?php
+						<div class="detail-card">
+							<i class="fas fa-calendar-alt"></i>
+							<div class="detail-info">
+								<span class="detail-label">Return Date :</span>
+								<span class="detail-value"><?php echo date('Y-m-d', strtotime($_SESSION['return_date'])); ?></span>
+							</div>
+						</div>
+						<div class="detail-card">
+							<i class="fas fa-map-marker-alt"></i>
+							<div class="detail-info">
+								<span class="detail-label">Pickup Location :</span>
+								<span class="detail-value"><?php echo $_SESSION['pickup_location']; ?></span>
+							</div>
+						</div>
+						<div class="detail-card">
+							<i class="fas fa-map-marker-alt"></i>
+							<div class="detail-info">
+								<span class="detail-label">Return Location :</span>
+								<span class="detail-value"><?php echo $_SESSION['return_location']; ?></span>
+							</div>
+						</div>
+					</div>
+				</div>
 
-											foreach($available_cars as $car)
-											{
-												echo "<div class='itemListElement'>";
-													echo "<div class = 'item_details'>";
-														echo "<div>";
-															echo $car['car_name'];
+				<!-- RESERVATION FORM -->
+				<div class="reservation-form-container">
+					<div class="form-section">
+						<form action="reserve.php" method="POST" id="reservation_second_form" v-on:submit="checkForm">
+							<div class="form-content">
+								
+								<!-- CAR SELECTION SECTION -->
+								<div class="car-selection-section">
+									<h3>Select Your Vehicle</h3>
+									<div class="cars-grid">
+										<?php
+											if(count($available_cars) > 0) {
+												foreach($available_cars as $car)
+												{
+													echo "<div class='car-card'>";
+														echo "<div class='car-info'>";
+															echo "<h4>" . $car['car_name'] . "</h4>";
+															echo "<p class='car-brand'>" . $car['brand_name'] . " - " . $car['type_label'] . "</p>";
 														echo "</div>";
-														echo "<div class = 'item_select_part'>";
-													?>
-															<div class="select_item_bttn">
-																<label class="item_label btn btn-secondary active">
-																	<input type="radio" class="radio_car_select" name="selected_car" v-model = 'selected_car' value="<?php echo $car['id'] ?>">Select
-																</label>	
-															</div>
-													<?php
+														echo "<div class='car-select'>";
+															echo "<label class='car-radio'>";
+																echo "<input type='radio' name='selected_car' v-model='selected_car' value='" . $car['id'] . "'>";
+																echo "<span class='radio-custom'></span>";
+																echo "<span class='select-text'>Select</span>";
+															echo "</label>";
 														echo "</div>";
 													echo "</div>";
+												}
+											} else {
+												echo "<div class='no-cars-message'>";
+													echo "<i class='fas fa-car'></i>";
+													echo "<p>No vehicles available for the selected dates.</p>";
 												echo "</div>";
 											}
 										?>
 									</div>
+									<div class="error-message" v-if="selected_car === null && formSubmitted">
+										<i class="fas fa-exclamation-circle"></i>
+										Please select a vehicle
+									</div>
+								</div>
+
+								<!-- CLIENT DETAILS SECTION -->
+								<div class="client-details-section">
+									<h3>Customer Information</h3>
+									<div class="form-fields">
+										<div class="form-group">
+											<label for="full_name">Full Name</label>
+											<input type="text" class="form-control" placeholder="John Doe" name="full_name" v-model="full_name">
+											<div class="error-message" v-if="full_name === null && formSubmitted">
+												<i class="fas fa-exclamation-circle"></i>
+												Full name is required
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="client_email">E-mail</label>
+											<input type="email" class="form-control" name="client_email" placeholder="abc@mail.xyz" v-model="client_email">
+											<div class="error-message" v-if="client_email === null && formSubmitted">
+												<i class="fas fa-exclamation-circle"></i>
+												E-mail is required
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="client_phonenumber">Phone Number</label>
+											<input type="text" name="client_phonenumber" placeholder="0123456789" class="form-control" v-model="client_phonenumber">
+											<div class="error-message" v-if="client_phonenumber === null && formSubmitted">
+												<i class="fas fa-exclamation-circle"></i>
+												Phone number is required
+											</div>
+										</div>
+									</div>
+									
+									<button type="submit" class="btn-book-instantly" name="submit_reservation">
+										<i class="fas fa-car"></i>
+										Book Instantly
+									</button>
 								</div>
 							</div>
-							<div class = "col-md-5">
-								<div class = "client_details">
-									<div class = "form-group">
-										<label for="full_name">Full Name</label>
-										<input type = "text" class = "form-control" placeholder = "John Doe" name = "full_name" v-model = 'full_name'>
-										<div class="invalid-feedback" style = "display:block" v-if="full_name === null">
-											Full name is required
-										</div>
-									</div>
-									<div class = "form-group">
-										<label for="client_email">E-mail</label>
-										<input type = "email" class = "form-control" name = "client_email" placeholder = "abc@mail.xyz" v-model = 'client_email'>
-										<div class="invalid-feedback" style = "display:block" v-if="client_email === null">
-											E-mail is required
-										</div>
-									</div>
-									<div class = "form-group">
-										<label for="client_phonenumber">Phone numbder</label>
-										<input type = "text"  name = "client_phonenumber" placeholder = "0123456789" class = "form-control" v-model = 'client_phonenumber'>
-										<div class="invalid-feedback" style = "display:block" v-if="client_phonenumber === null">
-											Phone number is required
-										</div>
-									</div>
-									<button type="submit" class="btn sbmt-bttn" name = "submit_reservation">Book Instantly</button>
-								</div>
-							</div>
-						</div>
-					</form>
+						</form>
+					</div>
+				</div>
 				<?php
 			}
 			else
 			{
 				?>
-					<div style = "max-width:500px; margin:auto;">
-						<div class = "alert alert-warning">
-							Please, select first pickup and return date.
-						</div>
-						<button class = "btn btn-info" style = "display:block;margin:auto">
-							<a href="./#reserve" style = "color:white">Homepage</a>
-						</button>
+				<div class="no-dates-container">
+					<div class="no-dates-message">
+						<i class="fas fa-calendar-times"></i>
+						<h3>Missing Reservation Details</h3>
+						<p>Please select pickup and return dates first.</p>
+						<a href="./#reserve" class="btn-homepage">
+							<i class="fas fa-home"></i>
+							Go to Homepage
+						</a>
 					</div>
+				</div>
 				<?php
 			}
 		?>
 	</div>
 </section>
 
-
-
-<!-- FOOTER BOTTOM -->
-
 <?php include "Includes/templates/footer.php"; ?>
 
-
-<script>
-
-new Vue({
-    el: "#reservation_second_form",
-    data: {
-		selected_car : '',
-        full_name: '',
-        client_email: '',
-        client_phonenumber: '',
-    },
-    methods:{
-        checkForm: function(event){
-            if( this.full_name && this.client_email && this.client_phonenumber)
-            {
-                return true;
-            }
-            
-            if (!this.full_name)
-            {
-                this.full_name = null;
-            }
-
-            if (!this.client_email)
-            {
-                this.client_email = null;
-            }
-
-            if (!this.client_phonenumber)
-            {
-                this.client_phonenumber = null;
-            }
-
-			if (!this.selected_car)
-            {
-                this.selected_car = null;
-            }
-            
-            event.preventDefault();
-        },
-    }
-})
-
-
-</script>
+<!-- Link to external JavaScript file -->
+<script src="Design/js/reserve-script.js"></script>
